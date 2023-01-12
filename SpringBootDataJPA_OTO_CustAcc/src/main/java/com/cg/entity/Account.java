@@ -9,40 +9,47 @@ import javax.persistence.Table;
 public class Account {
 	
 	@Id
-	private int accId;
+	private int accNo;
 	private String accType;
 	private double accBalance;
 	
 	public Account() {}
 	
-	public Account(int accId, String accType, double accBalance) {
+	public Account(int accNo, String accType, double accBalance) {
 		super();
-		this.accId = accId;
+		this.accNo = accNo;
 		this.accType = accType;
 		this.accBalance = accBalance;
 	}
-	public int getAccId() {
-		return accId;
+
+	public int getAccNo() {
+		return accNo;
 	}
-	public void setAccId(int accId) {
-		this.accId = accId;
+
+	public void setAccNo(int accNo) {
+		this.accNo = accNo;
 	}
+
 	public String getAccType() {
 		return accType;
 	}
+
 	public void setAccType(String accType) {
 		this.accType = accType;
 	}
+
 	public double getAccBalance() {
 		return accBalance;
 	}
+
 	public void setAccBalance(double accBalance) {
 		this.accBalance = accBalance;
 	}
 
 	@Override
 	public String toString() {
-		return "Account [accId=" + accId + ", accType=" + accType + ", accBalance=" + accBalance + "]";
+		return "Account [accNo=" + accNo + ", accType=" + accType + ", accBalance=" + accBalance + "]";
 	}
+	
 
 }

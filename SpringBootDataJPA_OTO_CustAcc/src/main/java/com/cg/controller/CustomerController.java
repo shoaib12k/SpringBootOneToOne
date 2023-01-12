@@ -2,6 +2,8 @@ package com.cg.controller;
 
 import java.util.List;
 
+import javax.net.ssl.HttpsURLConnection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cg.entity.Account;
 import com.cg.entity.Customer;
 import com.cg.services.CustomerService;
 
@@ -71,5 +74,15 @@ public class CustomerController {
 	}
 
 	
+	@GetMapping("customer-details/account/{accNo}")
+	public ResponseEntity<Account> customerByAccNo(@PathVariable("accNo") int accNo){
+		try {
+			Account acc = service.getCustFromAccNo(accNo);
+			System.out.println(acc);
+			return new ResponseEntity<>(acc, HttpStatus.OK);
+		}catch(Exception e){
+			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+		}
+	}
 	
 }

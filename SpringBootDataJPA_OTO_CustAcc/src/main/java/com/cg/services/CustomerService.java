@@ -15,5 +15,6 @@ public interface CustomerService {
 	Customer modifyCustomer(int custId, Customer cust) throws NoSuchCustomerFoundException;
 	boolean deleteCustomer(int custId) throws NoSuchCustomerFoundException;
 	
+	Account getCustFromAccNo(int accNo);
 	
 }

@@ -52,9 +52,6 @@ public class Customer {
 
 	public void setCustAcc(Account custAcc) {
 		this.custAcc = custAcc;
-		this.custAcc.setAccId(custAcc.getAccId());
-		this.custAcc.setAccBalance(custAcc.getAccBalance());
-		this.custAcc.setAccType(custAcc.getAccType());
 	}
 
 	@Override

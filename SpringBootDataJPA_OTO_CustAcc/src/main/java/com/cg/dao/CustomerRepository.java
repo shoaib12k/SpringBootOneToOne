@@ -12,4 +12,7 @@ import com.cg.entity.Customer;
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
 
+	@Query("Select c from Customer c Join c.custAcc a where a.accNo = :accNo")
+	public Account getCustByAccNo(@Param("accNo") int accNo);
+	
 }

@@ -70,6 +70,11 @@ public class CustomerServiceImpl implements CustomerService {
 		}
 	}
 
+	@Override
+	public Account getCustFromAccNo(int accNo) {
+		return custRepo.getCustByAccNo(accNo);
+	}
+
 
 
 }
