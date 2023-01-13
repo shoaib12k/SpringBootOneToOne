@@ -63,7 +63,7 @@ public class CustomerServiceImpl implements CustomerService {
 		
 		Optional<Customer> emp = custRepo.findById(custId);
 		if(emp.isPresent()) {
-			custRepo.delete(emp.get());
+			custRepo.deleteById(custId);
 			return true;
 		}else {
 			throw new NoSuchCustomerFoundException("Customer Not found");
